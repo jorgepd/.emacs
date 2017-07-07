@@ -1,12 +1,12 @@
-(setq-default user-full-name "Jorge Dodsworth"
+(setq-default user-full-name "Jorge Pumar Dodsworth"
               user-email-address "jorgepumar@hotmail.com")
 
-
+
 ; Upgrade or install remote packages.
 (package-initialize)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/"))
-
+
 ; General settings.
 (setq-default colon-double-space t
               fill-column 76
@@ -25,7 +25,7 @@
 (transient-mark-mode 1)
 (winner-mode 1)
 
-
+
 ; Backups.
 (setq backup-dir "~/.emacs.d/backups"
       delete-old-versions t
@@ -34,7 +34,7 @@
 (make-directory backup-dir t)
 (add-to-list 'backup-directory-alist `(".*" . ,backup-dir))
 
-
+
 ; Key-bindings.
 (global-set-key (kbd "M-h") 'backward-kill-word)
 (global-set-key (kbd "M-p") 'backward-paragraph)
@@ -48,7 +48,7 @@
 (global-unset-key (kbd "C-;"))
 (global-unset-key (kbd "C-z"))
 
-
+
 ; Input method.
 (prefer-coding-system 'utf-8)
 (setq default-input-method "portuguese-prefix")
@@ -65,7 +65,7 @@
              '(eval my-toggle-input-method-and-dictionary))
 (global-set-key (kbd "C-M-\\") 'my-toggle-input-method-and-dictionary)
 
-
+
 ; Hooks.
 (defun my-text-mode-startup ()
   (flyspell-mode 1)
@@ -92,7 +92,7 @@
 (add-hook 'conf-xdefaults-mode-hook 'my-prog-mode-startup)
 (add-hook 'prog-mode-hook 'my-prog-mode-startup)
 
-
+
 ; Mode-specific setup.
 
 ; ansi-color
@@ -193,7 +193,7 @@
                       :inherit 'whitespace-indentation)
   (global-whitespace-mode 1))
 
-
+
 ; Local stuff.
 (defun sort-words (reverse beg end)
   "Sort words in region alphabetically, in REVERSE if negative.
@@ -220,7 +220,7 @@ See `sort-words'."
                  ((equal prefix '(16)) "%B %d, %Y"))))
     (insert (format-time-string format))))
 
-
+
 ; Visuals.
 (defun my-hide-widgets ()
   (menu-bar-mode -1)
@@ -273,6 +273,7 @@ See `sort-words'."
 ;;   (my-face-apply-attributes my-latex-face-attributes))
 
 ;; (set-face-attribute 'default nil :family "terminus" :height 140)
-;;(set-face-attribute 'fixed-pitch nil :family "terminus")
+;; (set-face-attribute 'fixed-pitch nil :family "terminus")
 ;; (set-face-attribute 'mode-line nil :family "terminus" :height .8)
 ;; (set-face-attribute 'variable-pitch nil :family "terminus")
+
